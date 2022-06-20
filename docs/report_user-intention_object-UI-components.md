@@ -14,9 +14,9 @@ Good Information Architecture guides a user through layers, branches or funnels 
 
 While it should heavily influence the interface design of pages and UI components, it focuses purely on semantic grouping, hierachies and the current context of data.
 
-## Why revise the Information Architecture of meta-data?
+## Why revise the Information Architecture of item properties?
 
-As we [transition the Legacy Container Object to the UI Standard Listing Panel](https://docu.ilias.de/goto_docu_wiki_wpage_6409_1357.html) (and the UI item it contains) many requests came up to replicate all features of this legacy object especially with regards to the data shown.
+As we [transition the Legacy Container Object to the UI Standard Listing Panel](https://docu.ilias.de/goto_docu_wiki_wpage_6409_1357.html) (and the UI item it contains) many requests came up to replicate all features of this legacy object especially with regards to the properties shown.
 
 A feature request to [Streamline Object Properties](https://docu.ilias.de/goto_docu_wiki_wpage_7399_1357.html) already exists. It contains an extensive collection of properties that the Legacy Container Items will display when the conditions are met with little to no regard for the context or user intent.
 
@@ -24,13 +24,13 @@ There also is a proposal to create a [Catalogue Presentation for repository item
 
 Feature requests like these demonstrate that there is a lot of activity and requirements around object properties and their placement. However, many discussions often focus on single, specific use cases.
 
-Therefore, we would like to propose general guidelines for the Information Architecture of such properties that can be applied as a starting point for organizing object properties in many situations.
+With this document, we would like to propose general guidelines for the Information Architecture of such properties that can be applied as a starting point for organizing object properties in many situations.
 
 This guideline aims to make decisions about displaying object properties easier for concept designers and developers. It provides a more focused and contextually sensitive experience for the users while browsing through a repositiory.
 
 ## User intent should guide data presentation
 
-When a user interacts with an interface, they approach it with expectations and methods they learned from previous experiences. This is often referred to as the user's mental model. The user intent describes the goal, the mental model describes how they think they will get there.
+When a user interacts with an interface, they approach it with methods they learned from previous experiences. This is often referred to as the user's mental model. The user intent describes the goal, the mental model describes how they think they will get there.
 
 For example, if the user intent is to pick a course from a category that interests them, they might apply the mental model of navigation they know from a file manager: They expect that they can distinguish categories from other objects and that clicking on the category's title brings them one level deeper in the hierachy.
 
@@ -38,9 +38,9 @@ Ideally, the mental model of the user aligns with the interface model provided. 
 
 Because ILIAS offers many different user roles, dozens of different object types and a variety of vastly different possible actions, guessing the current user intent and matching their mental model at a given moment can be challenging.
 
-Therefore many places in ILIAS default to supporting many possible mental models at once. This often leads to screens and objects filled with so many properties and options that finding a specific one might feel cumbersome and overwhelming especially to new users.
+Therefore many places in ILIAS try to accomodate many possible user intents at once. This often leads to screens and objects filled with so many properties and options that finding a specific one might feel cumbersome and overwhelming especially to new users.
 
-Consequently, we explored if we can meet the user intent a bit more closely, ideally reducing the amount of properties shown without accidentally cutting important information.
+Consequently, we explored if and when we can meet the user intent a bit more closely, ideally reducing the amount of properties shown without accidentally cutting important information.
 
 We identified 3 general types of models, where closely matching a user's mental model while accordingly controlling the selection of information shown seems feasible in ILIAS:
 
@@ -52,26 +52,26 @@ We identified 3 general types of models, where closely matching a user's mental 
 
 In this case, a user intent is so focused that they only want to **quickly make the one clear choice for one expected object** by glancing at one or two of its properties. The item action shown as the most prominent is usually the reason why the user came to this view.
 
-A good example is the contact or member gallery in ILIAS. If a user sets out with the intent to get in touch with a specific person they already know, then a name and profile picture of that person is all they need to make the choice to initiate contact.
+A good example is the contact or member gallery in ILIAS. If a user sets out with the intent to get in touch with a specific person they already know, a name and profile picture of that person is all they need to make the choice to initiate contact.
 
-When a user expects to be making such a quick choice, a number of irrelevant properties and a hard to find main action are especially frustrating. A visual priority given to the element that allows the quickest identification is very welcomed.
+When a user expects to be making such a quick choice, a high number of irrelevant properties and actions are especially frustrating. A visual priority given to the element that allows the quickest identification is very welcomed.
 
-However, the reduction of properties can also prove problematic e.g. if the wanted user in the member gallery isn't identifiable just by the name or profile picture.
+However, the reduction of properties can also prove problematic e.g. if the wanted user in the member gallery isn't identifiable just by the name and profile picture.
 
 
 ### Comparing before choosing
 
 Sometimes a user wants to compare a selection of relevant properties of multiple objects before making a choice between them. The properties seen as relevant help the user to make the decision for the action presented as the most prominent.
 
-For example, a user might be offered a choice of sessions to attend in the ILIAS repository. Besides the session title, they will most likely be interested in multiple other properties like the time and date, the description, the location and the remaining available seats before attending. Ideally, irrelevant information (like the creation date of the session) wouldn't be shown at all.
+For example, a user might be offered a choice of sessions to attend. Besides the session title, they will most likely be interested in multiple other properties like the time and date, the description, the location and the remaining available seats before attending. Ideally, irrelevant information (like the creation date of the session) wouldn't be shown at all.
 
-When a user expects to compare objects, they do not like to find the relevant details only displayed in a subsequent view. Out of the array of potentially most relevant properties some can become more important than others (e.g. if there are no more seats available for a session, all other properties are no longer important).
+When a user expects to compare objects, they dislike finding the relevant details only displayed in a subsequent view they would have to repeatedly switch in and out of. From the array of potentially most relevant properties some can become more important than others (e.g. if there are no more seats available for a session, all other properties are no longer important).
 
 ### Managing multiple objects
 
 It's mostly administrators or users with a special role who want to **collect, compare and modify many objects and their properties for sorting and bulk processing actions.**
 
-The user management table in ILIAS supports many filtering, sorting and view options, so the administrator can choose dynamically which relevant properties to display and what (bulk) actions to perform.
+For example, the user management table in the ILIAS admin area supports many filtering, sorting and view options, so the administrator can choose dynamically which relevant properties to display and what (bulk) actions to perform.
 
 The quality of this user experience is mostly based on how intuitive and quick the provided sorting, view controls and filter systems are. When working with such an intent, a pre-filtered and visually weighted presentation is often seen as an unnecessary obstacle.
 
@@ -85,9 +85,9 @@ The legacy repository object, the UI item and the UI Presentation Table offer ro
 
 The legacy table and the UI Data Table are meant for dealing with large amount of data and offer the functions for dynamic filtering and processing that a person managing multiple objects requires.
 
-However, there are instances where those UI components are not embracing the user intent that they are best at, which sometimes forces the mental model to shift. For example, some repository items can end up displaying so many properties that finding the relevant bit to compare becomes time consuming. In this case one might wish for a table view with customizable property columns instead or a carefully set up presentation table which hides cartain details when collapsed.
+However, there are instances where those UI components are not embracing the user intent that they are best at, which sometimes forces the mental model to shift. For example, some repository items can end up displaying so many properties that finding the relevant bit to compare becomes time consuming. In this case one might wish for a table view with customizable property columns instead or a carefully set up UI Presentation Table which hides cartain details when collapsed.
 
-With the three distinct types of user intent presented here we would like to make identifying mismatches easier and encourage further discussions and explorations of how the ILIAS UI can lead the user with minimal friction and distraction.
+With the three distinct types of user intent presented here we would like to make identifying mismatches easier and encourage further discussions and exploration of how the ILIAS UI can lead the user with minimal friction and distraction.
 
 ## General strategies to meet user intent
 
@@ -101,34 +101,44 @@ There are multiple ways to accomodate a user's wish to focus on specific data pr
 
 When there is no way to build the current screen around a set of selected, specific user intents, we can still support the user by giving them a specific location to look for. When properties and actions are clearly grouped and segmented, the user learns where they find the information that currently is of interest. For example, all community interactions like star rating and comments could be in the bottom right right corner of an item, all organizational meta-data like file size and version number in the bottom left.
 
-We therefore propose to offer multiple consistently named locations on UI components to make decisions about splitting up properties easier. Instead of one property section an item could have multiple distinct ones like Community Interactions (star rating, comment number), content information (next appointment date, available number of seats) and meta data (creation date, file size, version number).
+We therefore propose to offer multiple consistently named locations on UI components to make decisions about splitting up properties easier. Instead of one property section an item could have multiple distinct ones like community interactions (star rating, comment number), content information (next appointment date, available number of seats) and meta data (creation date, file size, version number). This will help users to quickly find the information relevant to them in multi-purpose views.
 
 When screens are built around a specific user intent the most important property could be pulled to a prominent position. Different UI components might have different kinds of featured positions, the already existing Leading Text of the UI Item and Important Fields of the UI Presentation Table are good examples for this.
 
-Some (or all) irrelevant properties could be hidden. Which locations and properties are shown will most likely depend on the type of object. For example, the number of recent posts in a forum object is a relevant representation of activity, while the number of recent items in a category is usually not of interest.
+In places where we know the user intent to some extend, some (or all) irrelevant properties could be hidden. For example, the number of recent posts in a forum object is a relevant representation of activity, while the number of recent items in a category is usually not of interest.
 
-In views we should avoid repeating, redundant information e.g. when the magazine shows all categories grouped together, it might suffice to put the the category icon into the group panel headline instead of on every single object.
+In views we should avoid repeating, redundant information. For example, when the magazine shows all categories grouped together, it might suffice to put the the category icon into the group panel headline instead of every single object as every item in this group must be category.
 
-We also have yet to explore if and how we want to incorporate other elements of the interface to help display or hide information of an object outside of the item itself. For example, many file managers can display additional information in a side bar. Maybe the slate can be filled with new tools and features to aid in analyzing, comparing and managing repository items.
+We also have yet to explore if and how we want to incorporate other elements of the interface to help display or hide information of an object outside of the item itself. For example, many file managers can display additional information and actions in a sidebar. Maybe the slate can be filled with new tools and features to aid in analyzing, comparing and managing repository items.
 
-We also might want to more clearly and consistently decide, how a property is displayed e.g. as a key text & value text, key text & icon, icon & value text, just the value text or just an icon. For example in "Status: Offline", the word "Status" seems to be redundant as the word "Offline" alone communicates the same amount of information without it.
+We also might want to more clearly and consistently decide, how a property is displayed e.g. as a key text & value text, key text & icon, icon & value text, just the value text or just an icon. For example in "Status: Offline", the word "Status" seems to be redundant as the word "Offline" alone communicates the same amount of information without the leading key.
 
 ### User adjusted views
 
-A user with the intent to manage multiple objects would like to use filters, display properties and sorting to shape the view to match their current focus. Currently, in the magazine repository, there is no way for the user to (temporairly) choose a specific set of of properties to be displayed while hiding others. We might want to consider adding a table view where managing users can quickly show and hide property columns and benefit from all the filter and sorting options they know from other views.
+A user with the intent to manage multiple objects would like to use filters, display properties and sorting to shape the view to match their current focus. Currently, in the magazine repository, there is no way for the user to (temporairly) choose a specific set of of properties to be displayed while hiding others. We might want to consider adding a table view where managing users can quickly show and hide property columns of a container and benefit from all the filter and sorting options they know from other views.
 
 To declutter the content area, we might want to consider utilizing the slate for some of the filter and sorting tools, which on the one side keeps them in view while scrolling and on the other sides gives an option to hide them for users who don't wish to use them.
 
 ### Curated views
 
-Very often in ILIAS, we have higher user roles managing content for lower user roles. As part of this the higher user roles craft landing pages with carefully selected repository items supllemented with information added through the page editor. If the managing user would have more control over which properties are shown they could build very focused views around the anticipated user intent.
+Very often in ILIAS, we have higher user roles managing content for lower user roles. As part of this the higher user roles craft landing pages with carefully selected repository items combined with information added through the page editor. If the managing user would have more control over which properties are shown, they could build very focused views around the anticipated user intent.
 
-For example, a landing page for new users offering the only three mandatory beginner courses could be completely reduced to a UI card with just a thumbnail and the course title. A catalogue of all available courses on the other hand could use the UI presentation table with focus on event dates to assist in scheduling the upcoming months.
+For example, a landing page for new users offering the only three mandatory beginner courses could be completely reduced to a UI Card with just a thumbnail and the course title. A catalogue of all available courses on the other hand could use the UI Presentation Table with focus on event dates to assist in scheduling the learner's upcoming months.
 
-We have seen managing users building such views manually faking a deck of cards that only contains the desired information and highlights with the page editor (see the starting page of the docu.ilias.de instance). While this is a valid workaround, these fake items do not update when the object they represent is updated. Adding, updating and removing many of such items can turn into a laborious process and is prone to user error.
+We have seen managing users building such views manually faking a deck of cards that only contains the desired information and highlights with the page editor. While this is a valid workaround, these fake items do not update when the object they represent is updated. Adding, updating and removing many of such items can turn into a laborious process and is prone to user error.
 
-Technically, every view that is developed with a specific focus also falls under this category like the badge, certificate and contacts pages which utilize a deck of cards with selected properties.
+Technically, every view that is developed with a specific focus also falls under this category like the badge, certificate and contacts pages which utilize a deck of cards with a carefully chosen selection of properties and actions.
 
 ## Next steps
 
-We hope that this documents provides some concepts and vocabularies to discuss user intent and in
+We hope that this document provides some concepts to clarify user intent and Information Architecture when discussing, developing and improving UI components, views and other features in ILIAS.
+
+We propose to extend the information on recommended use cases in the Kitche Sink Documentation of the UI Item, UI Presentation Table and UI Card with regards to which user intents they serve best.
+
+We think the feature request to [transition the Legacy Container Object to the UI Standard Listing Panel](https://docu.ilias.de/goto_docu_wiki_wpage_6409_1357.html) could benefit from a semantic segmentation and order of properties and actions inside the UI item as outlined in the chapter Structured Patterns.
+
+In connection to the ongoing discussion of which object can and should display which properties (e.g. here: [Streamline Object Properties](https://docu.ilias.de/goto_docu_wiki_wpage_7399_1357.html)), we also might want to evaluate how each properties are displayed by default (e.g. key and value, just the value, just an icon or key and icon?) as their purpose and context as well as the user's expectations may have changed and grown over the years since some objects were implemented.
+
+In some selected contexts, we recommend considering taking advantage of the space around the objects. For example, some kind of a property sidebar that users know from other web apps like Nextcloud, Trello and Jira could be displayed inside the slate.
+
+A roadmap and detailed feature requests are yet to be determined and will be linked in this document as undertakings around the item properties develop.
