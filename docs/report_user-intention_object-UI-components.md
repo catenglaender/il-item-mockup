@@ -42,7 +42,19 @@ Therefore many places in ILIAS try to accomodate many possible user intents at o
 
 Consequently, we explored if and when we can meet the user intent a bit more closely, ideally reducing the amount of properties shown without accidentally cutting important information.
 
-We identified 3 general types of models, where closely matching a user's mental model while accordingly controlling the selection of information shown seems feasible in ILIAS:
+First, we conducted a workshop collecting the experiences from product managers and programmers at Concepts and Training GmbH, with a focus on why they (or users they know of) would struggle with the presentation of objects in different parts of ILIAS. The biggest issues reported were:
+
+* large amounts of irrelevant information when looking for a specific property
+* empty space (in particular wide repository items with few or no displayed properties)
+* failed communication through irrelevant pictures (in UI Cards) and unknown iconography (the empty UI Progress Meter)
+
+When comparing ILIAS to other web apps the participants were making the following observations (this doesn't necessarily mean that ILIAS needs these features):
+
+* when dealing with large amounts of objects many apps offer a very condensed, customizable table view (resembling a file manager)
+* in some apps you can inspect/edit properties and even open objects in a dedicated area without leaving the current page (Jira, Trello, Outlook Online)
+* no object drag and drop or right-click actions in the ILIAS repository
+
+Based on this input and general research on mental models and information architecture (see Further Reading & Sources), we identified 3 general types of models, where controlling the selection of information according to the user intent seems feasible in ILIAS:
 
 * Making a quick choice
 * Comparing before choosing
@@ -61,7 +73,7 @@ However, the reduction of properties can also prove problematic e.g. if the want
 
 ### Comparing before choosing
 
-Sometimes a user wants to compare a selection of relevant properties of multiple objects before making a choice between them. The properties seen as relevant help the user to make the decision for the action presented as the most prominent.
+Sometimes a user wants to **compare a selection of relevant properties of multiple objects before making a choice between them.** The properties seen as relevant help the user to make the decision for the action presented as the most prominent.
 
 For example, a user might be offered a choice of sessions to attend. Besides the session title, they will most likely be interested in multiple other properties like the time and date, the description, the location and the remaining available seats before attending. Ideally, irrelevant information (like the creation date of the session) wouldn't be shown at all.
 
@@ -101,13 +113,23 @@ There are multiple ways to accomodate a user's wish to focus on specific data pr
 
 When there is no way to build the current screen around a set of selected, specific user intents, we can still support the user by giving them a specific location to look for. When properties and actions are clearly grouped and segmented, the user learns where they find the information that currently is of interest. For example, all community interactions like star rating and comments could be in the bottom right right corner of an item, all organizational meta-data like file size and version number in the bottom left.
 
-We therefore propose to offer multiple consistently named locations on UI components to make decisions about splitting up properties easier. Instead of one property section an item could have multiple distinct ones like community interactions (star rating, comment number), content information (next appointment date, available number of seats) and meta data (creation date, file size, version number). This will help users to quickly find the information relevant to them in multi-purpose views.
+Before we dived deeper into organizing the properties shown on various ILIAS objects we investigated what different formats, functionalities and uses cases for properties exist. The table on the feature request [Streamline Object Properties](https://docu.ilias.de/goto_docu_wiki_wpage_7399_1357.html) was tremendously helpful as a starting point. 
 
-When screens are built around a specific user intent the most important property could be pulled to a prominent position. Different UI components might have different kinds of featured positions, the already existing Leading Text of the UI Item and Important Fields of the UI Presentation Table are good examples for this.
+The collection we compiled focuses on the format and which UI component was using this property. This table isn't meant to be complete and rather should give a rough idea of the wide range of property types in ILIAS): [Properties on ILIAS Objects](report_table_properties-in-ILIAS.md)
+
+We propose to offer multiple consistent locations on UI components to make decisions about splitting up properties easier. Instead of one property section an item could have multiple distinct ones. Possible semantic groups could be:
+
+* community interactions (star rating, comment number)
+* content information (next appointment date, available number of seats)
+* meta data (creation date, file size, version number)
+
+Distinct groups will help users to quickly find the information relevant to them in multi-purpose views.
+
+When screens are built around a specific user intent the most important property could be pulled to a prominent position. Different UI components might have different kinds of featured positions. The already existing Leading Text of the UI Item and Important Fields of the UI Presentation Table are good examples for this.
 
 In places where we know the user intent to some extend, some (or all) irrelevant properties could be hidden. For example, the number of recent posts in a forum object is a relevant representation of activity, while the number of recent items in a category is usually not of interest.
 
-In views we should avoid repeating, redundant information. For example, when the magazine shows all categories grouped together, it might suffice to put the the category icon into the group panel headline instead of every single object as every item in this group must be category.
+In views we should avoid repeating redundant information. For example, when the magazine shows all categories grouped together, it might suffice to put the the category icon only once into the group panel headline instead of on every single object.
 
 We also have yet to explore if and how we want to incorporate other elements of the interface to help display or hide information of an object outside of the item itself. For example, many file managers can display additional information and actions in a sidebar. Maybe the slate can be filled with new tools and features to aid in analyzing, comparing and managing repository items.
 
@@ -115,7 +137,7 @@ We also might want to more clearly and consistently decide, how a property is di
 
 ### User adjusted views
 
-A user with the intent to manage multiple objects would like to use filters, display properties and sorting to shape the view to match their current focus. Currently, in the magazine repository, there is no way for the user to (temporairly) choose a specific set of of properties to be displayed while hiding others. We might want to consider adding a table view where managing users can quickly show and hide property columns of a container and benefit from all the filter and sorting options they know from other views.
+A user with the intent to manage multiple objects would like to use filters, display properties and sorting to shape the view to match their current focus. Currently, in the magazine repository, there is no way for the user to (temporairly) choose a specific set of of properties to be displayed while hiding others. We might want to consider adding a table view where managing users can quickly show and hide property columns of a container and benefit from all the filter and sorting options they know from other table views.
 
 To declutter the content area, we might want to consider utilizing the slate for some of the filter and sorting tools, which on the one side keeps them in view while scrolling and on the other sides gives an option to hide them for users who don't wish to use them.
 
@@ -139,6 +161,13 @@ We think the feature request to [transition the Legacy Container Object to the U
 
 In connection to the ongoing discussion of which object can and should display which properties (e.g. here: [Streamline Object Properties](https://docu.ilias.de/goto_docu_wiki_wpage_7399_1357.html)), we also might want to evaluate how each properties are displayed by default (e.g. key and value, just the value, just an icon or key and icon?) as their purpose and context as well as the user's expectations may have changed and grown over the years since some objects were implemented.
 
-In some selected contexts, we recommend considering taking advantage of the space around the objects. For example, some kind of a property sidebar that users know from other web apps like Nextcloud, Trello and Jira could be displayed inside the slate.
+In some selected contexts, we recommend considering taking advantage of the space around the objects. For example, some kind of a property sidebar in the slate that users know from other web apps like Nextcloud, Trello and Jira could be worth exploring.
 
 A roadmap and detailed feature requests are yet to be determined and will be linked in this document as undertakings around the item properties develop.
+
+## Further Reading & Sources
+
+* Young, I. (2008). Mental Models - Aligning Strategy with Human Behavior. Rosenfeld Media, LLC
+* Spencer D. (2010). A Practical Guide to Information Architecture. UXmastery. [Link](https://maadmob.com.au/wp-content/uploads/2021/03/PracticalGuideToInformationArchitecture.pdf)
+* Prof. Mahyar, N. (2019). Mental Models - Conceptual Models and Design. Lecture at the University of Massachusetts Amherst. [Link](https://groups.cs.umass.edu/nmahyar/wp-content/uploads/sites/8/2019/03/690A-10-ConceptualModels.pdf)
+* Babich N. (2020). The Beginner’s Guide to Information Architecture in UX. Adobe XD Website. [Link](https://xd.adobe.com/ideas/process/information-architecture/information-ux-architect/)
