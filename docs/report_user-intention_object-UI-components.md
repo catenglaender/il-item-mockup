@@ -145,7 +145,7 @@ To declutter the content area, we might want to consider utilizing the slate for
 
 ### Curated views
 
-Very often in ILIAS, we have higher user roles managing content for lower user roles. As part of this, the higher user roles craft landing pages from carefully selected repository items, combined with information added through the page editor. If the managing user would have more control over which properties are shown, they could build very focused views around the anticipated user intent.
+Very often in ILIAS, we have higher user roles managing content for lower user roles. As part of this, the higher user roles craft landing pages with carefully selected repository items on them, combined with information added through the page editor. If the managing user would have more control over which properties are shown, they could build very focused views around the anticipated user intent.
 
 For example, a landing page for new users offering the only three mandatory beginner courses could be completely reduced to a UI Card with just a thumbnail and the course title. A catalogue of all available courses, on the other hand, could use the UI Presentation Table with focus on event dates to assist in scheduling the learner's upcoming months.
 
