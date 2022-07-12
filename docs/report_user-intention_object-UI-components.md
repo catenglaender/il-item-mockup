@@ -131,7 +131,7 @@ If screens are built around a specific user intent, the most important property 
 
 In places where we know the user intent to some extent, some (or all) irrelevant properties could be hidden. For example, the number of recent posts in a forum object is a relevant representation of activity, while the number of recent items in a category is usually not of interest.
 
-In some instances we can avoid repeating redundant information. For example, when the magazine shows all categories grouped together, it might suffice to put the the category icon only once into the group panel headline instead of on every single object.
+In some instances we can avoid repeating redundant information. For example, when the repository shows all categories grouped together, it might suffice to put the the category icon only once into the group panel headline instead of on every single object.
 
 We have yet to explore if and how we want to incorporate other elements of the interface to help display or hide information of an object outside of the item itself. For example, many file managers can display additional information and actions in a sidebar. Maybe the slate can be filled with new tools and features to aid in analyzing, comparing, and managing repository items.
 
@@ -139,7 +139,7 @@ We also might want to more clearly and consistently decide on how a property is 
 
 ### User adjusted views
 
-A user with the intent to manage multiple objects would like to use filters, display properties, and sorting to shape the view to match their current focus. Currently, in the magazine repository, there is no way for the user to (temporarily) choose a specific set of of properties to be displayed, while hiding others. We might want to consider adding a table view, where managing users can quickly show and hide property columns of a container, and can benefit from all the filter and sorting options they know from other table views.
+A user with the intent to manage multiple objects would like to use filters, display properties, and sorting to shape the view to match their current focus. Currently, in the repository, there is no way for the user to (temporarily) choose a specific set of of properties to be displayed, while hiding others. We might want to consider adding a table view, where managing users can quickly show and hide property columns of a container, and can benefit from all the filter and sorting options they know from other table views.
 
 To declutter the content area, we might want to consider utilizing the slate for some of the filter and sorting tools. This, on the one side, keeps them in view while scrolling, and on the other side, gives an option to hide them for users who don't wish to use them.
 
@@ -151,7 +151,7 @@ For example, a landing page for new users offering the only three mandatory begi
 
 We have seen managing users building such views manually with the page editor, faking a deck of cards that only contains the desired information and highlights. While this is a valid workaround, these fake items do not update when the object they represent is updated. Adding, updating, and removing many such items can turn into a laborious process, and is prone to user error.
 
-Technically, every view that is developed with a specific focus also falls under this category - such as the badge, certificate, and contacts pages, which utilize a deck of cards with a carefully chosen selection of properties and actions.
+When concept designers and developers build views around a specific focus, they are creating a curated view as well. For example the badge, certificate, and contacts pages utilize a deck of cards with a carefully chosen selection of properties and actions.
 
 ## Next steps
 
