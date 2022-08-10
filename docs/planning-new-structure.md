@@ -1,3 +1,51 @@
+## UI Component HTML Template bare - layout structure done in CSS
+
+* layout, color and bg come all from component specific CSS classes (maybe using mixins from other layers)
+
+```html
+<div class="il-c-item">
+    <div class="il-c-obj__main-identifier-1">{MAIN-IDENT-1}</div>
+    <div class="il-c-obj__main-identifier-2">{MAIN-IDENT-2}</div>
+    <div class="il-c-obj__main-identifier-3">{MAIN-IDENT-3}</div>
+    <div class="il-c-obj__main-action">{MAIN-ACTION_PROP}{MAIN-ACTION}</div>
+    <div class="il-c-obj__properties__content-info">{CONTENT-INFO}</div>
+    <div class="il-c-obj__properties__community-interaction">{COMMUNITY-INTACT}</div>
+    <div class="il-c-obj__properties__meta-data">{META-DATA}</div>
+    <div class="il-c-obj__manage-action">{MANAGE-ACTION}</div>
+    <div class="il-c-obj__properties__additional">{ADDITIONAL_PROP}</div>
+</div>
+```
+
+## UI Component HTML template - layout structure done in HTML
+
+* layout comes from layout layer and tool layer classes
+* colors and bg design comes from component specific classes
+
+```html
+<div class="il-c-item-2">
+    <div class="il-l-section-bar il-t-flex--nowrap">
+        <div class="il-c-obj__main-identifier-2 ">{MAIN-IDENT-2}</div>
+        <div class="il-l-section il-t-flex--grow-1">
+            <div class="il-l-section-bar il-t-flex--nowrap">
+                <div class="il-l-section il-t-flex--grow-1">
+                    <div class="il-c-obj__main-identifier-1">{MAIN-IDENT-1}</div>
+                    <div class="il-c-obj__properties__content-info">{CONTENT-INFO}</div>
+                </div>
+                <div class="il-l-section-bar">
+                    <div class="il-c-obj__main-action">{MAIN-ACTION_PROP}{MAIN-ACTION}</div>
+                    <div class="il-c-obj__manage-action">{MANAGE-ACTION}</div>
+                </div>
+            </div>
+            <div class="il-l-section-bar il-t-flex--nowrap">
+                <div class="il-c-obj__properties__content-info il-t-flex--grow-1">{CONTENT-INFO}</div>
+                <div class="il-c-obj__properties__community-interaction">{META_DATA}</div>
+            </div>
+        </div>
+    </div>
+</div>
+```
+
+
 Areas:
 * main identifier 1 (title, object icon)
 * main identifier 2 (thumbnail, main date/time)
