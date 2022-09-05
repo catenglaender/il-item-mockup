@@ -6834,7 +6834,8 @@ html {
 }
 tag {
   display: inline-block;
-  background-color: lightgray;
+  font-size: 0.9rem;
+  background-color: #efefef;
   padding: 0.5rem;
   border-radius: 5px;
 }
@@ -6967,7 +6968,7 @@ tag {
   left: 0.1rem;
   right: 0.1rem;
   height: 0.6rem;
-  max-width: 80%;
+  max-width: 5%;
   border-radius: 0.5rem;
   margin-left: 0.1rem;
 }
@@ -6999,6 +7000,17 @@ tag {
 .il-c-item .il-c-obj__properties__content-info {
   grid-area: pci;
 }
+.il-c-item .il-c-obj__properties__description {
+  overflow: hidden;
+  line-height: 2rem;
+  max-height: 8rem;
+  -webkit-box-orient: vertical;
+  display: block;
+  display: -webkit-box;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+}
 .il-c-item .il-c-obj__manage-action {
   grid-area: man;
 }
@@ -7007,6 +7019,7 @@ tag {
 }
 .il-c-item .il-c-obj__properties__meta-data {
   grid-area: md;
+  font-size: 0.9rem;
 }
 .il-c-item .il-c-obj__properties__community-interaction {
   grid-area: coi;

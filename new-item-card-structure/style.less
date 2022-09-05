@@ -8,7 +8,7 @@
 @spacing-small: (@spacing-medium/2);
 @spacing-xsmall: (@spacing-small/2);
 
-@il-font-size-small: .8rem;
+@il-font-size-small: .9rem;
 @il-font-size-base: 14px;
 @il-font-size-large: 1.2rem;
 @il-font-size-xlarge: 1.6rem;
@@ -41,7 +41,8 @@ html {
 
 tag {
     display: inline-block;
-    background-color: lightgray;
+    font-size: @il-font-size-small;
+    background-color: #efefef;
     padding: @spacing-xsmall;
     border-radius: 5px;
 }
@@ -189,7 +190,7 @@ tag {
     left: 0.1rem;
     right: 0.1rem;
     height: .6rem;
-    max-width: 80%;
+    max-width: 5%;
     border-radius: .5rem;
     margin-left: .1rem;
 }
@@ -229,6 +230,17 @@ tag {
     .il-c-obj__properties__content-info {
         grid-area: pci;
     }
+    .il-c-obj__properties__description {
+        overflow:hidden;
+        line-height: 2rem;
+        max-height: 8rem;
+        -webkit-box-orient: vertical;
+        display: block;
+        display: -webkit-box;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 1;
+    }
     .il-c-obj__manage-action {
         grid-area: man;
     }
@@ -237,6 +249,7 @@ tag {
     }
     .il-c-obj__properties__meta-data {
         grid-area: md;
+        font-size: @il-font-size-small;
     }
     .il-c-obj__properties__community-interaction {
         grid-area: coi;
